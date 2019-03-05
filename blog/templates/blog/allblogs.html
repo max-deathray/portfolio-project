@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- you have to add this for python to be able to serve those static files-->
+  {% load staticfiles %}
   <head>
     <meta charset="utf-8" />
     <meta
@@ -89,7 +91,7 @@
         <hr />
         {% for blog in blogs.all %}
 
-        <a href="/{{ blog_id }}"
+        <a href="{% url 'detail' blog.id %}"
           ><h4>
             {{ blog.title }}
           </h4></a
